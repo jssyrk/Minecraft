@@ -1,0 +1,629 @@
+/*
+	@_IOERROR
+
+	Created by Joss York	
+*/
+
+
+
+/************************/
+/*	
+/*	1 - Import Documentation
+/*
+/************************/
+
+
+@import '_reset.scss';
+@import '_mixins.scss';
+
+
+
+/************************/
+/*	
+/*	2 - Main Styling
+/*
+/************************/
+
+#wrapper{
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+.sectioncontent{
+  	width: 1000px;
+  	margin: 0 auto;
+}
+
+
+
+/************************/
+/*	
+/*	3 - Element Styling
+/*
+/************************/
+
+
+
+/**
+	Overlay & Modal
+**/
+
+#overlay{
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.75); /*dim the background*/
+}
+
+#signinmodal{
+	width: 600px;
+	min-width: 600px;
+	height: 300px;
+	background: #ffffff;
+	text-align: center;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -150px;
+    z-index: 9999;
+    
+    form{
+    	text-align: center;
+    	margin-top: 30px;
+    	margin-bottom: 30px;
+
+    	input{
+	    	width: 500px;
+	    	height: 40px;
+	    	font-size: 14px;
+	    	color: #545b5c;
+	    	outline: none;
+	    	border: none;
+	    	border-bottom: 2px solid #7f7f7f;
+    	}
+
+    	#btn{
+			font-weight: 200;
+			color: #ffffff;
+			opacity: 1;
+			margin-top: 40px;
+			border-bottom: 4px solid #007c3f;
+			background-color: #00a453;
+			cursor: pointer;
+			@include border-radius(4px);
+			@include animation(.2s);
+    	}
+
+    	#btn:hover{
+    		background: #007c3f;
+    	}
+    }
+
+    a{
+    	font-size: 14px;
+    	font-weight: 300;
+    	color: #545b5c;
+    	opacity: 0.6;
+    	border-bottom: 2px dotted #545b5c;
+    	@include animation(.2s);
+    }
+
+    a:hover{
+    	opacity: 1;
+    }
+}
+
+
+
+/**
+	Header & Top Nav
+**/
+
+#topnav{
+	width: 100%;
+	min-width: 1000px;
+	height: 50px;
+	background-color: #4e4e4e;
+
+	nav{
+		width: 1000px;
+		margin: 0 auto;
+
+		li{
+			display: inline-block;
+    		text-transform: capitalize;
+    		font-weight: 300;
+    		font-size: 15px;
+    		padding: 0 15px;
+    		padding-top: 17px;
+    		height: 33px;
+    		@include animation(.2s);
+
+    		a{
+    			opacity: 0.6;
+    			@include animation(.2s);
+    		}
+		}
+
+		li:hover{
+			background: rgba(0,0,0,0.2);
+
+			a{
+				opacity: 1;
+			}
+		}
+
+		#games{
+			float: left;
+
+			#active{
+				background: #00a453;
+				border-bottom: 4px solid #007c3f;
+
+				a{
+					opacity: 1;
+				}
+			}
+
+			#active:hover{
+				background: #007c3f;
+			}
+		}
+
+		#signin{
+			float: right;
+		}
+	}
+}
+
+
+
+#hero{
+	height: 500px;
+	min-height: 500px;
+	width: 100%;
+	min-width: 1000px;
+	margin-bottom: 125px;
+	background: url('../images/headerbgb.jpg') center no-repeat;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+  	#mainnav{
+		width: 800px;
+		margin: 0 auto;
+		padding-top: 60px;
+		margin-bottom: 125px;
+
+		li{
+			display: inline;
+    		text-transform: capitalize;
+    		font-weight: 400;
+    		font-size: 18px;
+    		margin: 0 20px;
+
+    		#logo{
+    			margin-bottom: -33px;
+    		}
+    		
+    		a{
+    			opacity: 0.9;
+    			border-bottom: 2px solid rgba(0,0,0,0);
+    			text-shadow: 2px 2px rgba(0,0,0,0.8);
+    			@include animation(.3s);
+    		}
+
+    		a:hover{
+    			opacity: 1;
+    			border-bottom: 2px solid rgba(255,255,255,0.8);
+    		}
+    	}
+	}
+
+	.sectioncontent{
+		width: 900px;
+
+		h1{
+			font-size: 22px;
+			font-weight: 200;
+			line-height: 32px;
+			color: #fff;
+			text-align: center;
+			text-shadow: 2px 2px rgba(0,0,0,1);
+			padding: 10px 20px;
+			background: rgba(0,0,0,0.4);
+
+			span{
+				font-weight: 400;
+			}
+		}
+	}
+
+	#statstab{
+		height: 100px;
+		width: 600px;
+		left: 50%;
+		margin-left: -300px;
+		margin-top: -140px;
+		top: 50%;
+		position: relative;
+		border-bottom: 2px solid rgba(0,0,0,0.2);
+		background-color: #f1f1f1;
+		text-align: center;
+		@include border-radius(4px);
+
+		h1{
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 18px;
+			padding-top: 15px;
+			padding-bottom: 10px;
+			color: #aeb1b1;
+		}
+
+		h2{
+			font-size: 22px;
+			font-weight: 400;
+			color: #41494a;
+			margin-bottom: 5px;
+		}
+
+		h3{
+			font-size: 14px;
+			font-weight: 300;
+			color: #41494a
+		}
+
+		.col3{
+			float: left;
+			width: 160px;
+			padding: 0 20px;
+		}
+	}
+}
+
+
+
+/**
+	Purchase & Play Options
+**/
+
+#playgame{
+	width: 800px;
+	height: 100px;
+	margin: 0 auto;
+
+	.col3{
+		float: left;
+		width: 30%;
+		text-align: center;
+		padding: 0% 1.66%;
+
+		a{
+			opacity: 0.5;
+			font-weight: 400;
+			font-size: 16px;
+			color: #41494a;
+			padding-bottom: 5px;
+			border-bottom: 2px dotted #41494a;
+			@include animation(.2s);
+		}
+
+		a:hover{
+			opacity: 1;
+		}
+
+		#btn{
+			display: inline-block;
+			width: 200px;
+			font-weight: 300;
+			padding: 15px 0px;
+			margin-top: -15px;
+			color: #ffffff;
+			opacity: 1;
+			border-bottom: 4px solid #007c3f;
+			background: #00a453;
+			@include border-radius(4px);
+			@include animation(.2s);
+		}
+
+		#btn:hover{
+			background: #007c3f;
+		}
+	}
+}
+
+
+
+/**
+	Game Intergration
+**/
+
+#gamebio, #socialbio{
+	width: 1000px;
+	height: 290px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	margin-bottom: 50px;
+	border-bottom: 1px solid rgba(0,0,0,0.4);
+
+	.col3{
+		float: left;
+		width: 30%;
+		text-align: left;
+	}
+
+	.col3:first-child{
+		padding-right: 5%;
+	}
+
+	.col3:last-child{
+		padding-left: 5%;
+	}
+
+	h1{
+		color: #41494a;
+		font-size: 18px;
+		font-weight: 300;
+		margin-bottom: 30px;
+
+		span{
+			font-weight: 600;
+		}
+	}
+
+	h2{
+		font-size: 14px;
+		line-height: 22px;
+		font-weight: 300;
+		margin-top: -10px;
+		margin-bottom: 30px;
+		opacity: 0.6;
+	}
+
+	p{
+		color: #41494a;
+		font-size: 14px;
+		line-height: 24px;
+		opacity: 0.7;
+		text-align: justify;
+	}
+}
+
+
+
+/**
+	Social Intergration
+**/
+
+#socialbio{
+	height: 340px;
+	border-bottom: none;
+
+	#tumblr{
+		.post{
+			opacity: 0.7;
+			margin-bottom: 20px;
+			cursor: pointer;
+			@include animation(.2s);
+
+			h1{
+				color: #00a453;
+				font-size: 14px;
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+
+			h2{
+				font-size: 12px;
+				font-weight: 600;
+				margin-bottom: 0px;
+				opacity: 0.5;
+			}
+		}
+
+		.post:hover{
+			opacity: 1;
+		}
+	}
+
+	#twitter{
+		.post{
+			opacity: 0.7;
+			margin-bottom: 20px;
+			cursor: pointer;
+			@include animation(.2s);
+
+			h1{
+				font-size: 14px;
+				font-weight: 300;
+				line-height: 18px;
+				margin-bottom: 10px;
+			}
+
+			h2{
+				font-size: 12px;
+				font-weight: 600;
+				margin-bottom: 0px;
+				opacity: 0.5;
+			}
+
+			a{
+				color: #00a453;
+			}
+		}
+
+		.post:hover{
+			opacity: 1;
+		}
+	}
+}
+
+
+
+/**
+	Register
+**/
+
+#register{
+	height: 500px;
+	width: 1000px;
+	margin: 0 auto;
+
+	.sectioncontent{
+		text-align: center;
+
+		h1{
+		color: #41494a;
+		font-size: 18px;
+		font-weight: 300;
+		margin-bottom: 20px;
+		}
+
+		h2{
+		color: #41494a;
+		font-size: 14px;
+		font-weight: 400;
+		margin-bottom: 30px;
+		}
+
+		form{
+    	text-align: center;
+    	margin-top: 30px;
+    	margin-bottom: 30px;
+
+	    	input{
+		    	width: 500px;
+		    	height: 40px;
+		    	font-size: 14px;
+		    	color: #545b5c;
+		    	outline: none;
+		    	border: none;
+		    	border-bottom: 2px solid #7f7f7f;
+	    	}
+
+	    	#btn{
+				font-weight: 200;
+				color: #ffffff;
+				opacity: 1;
+				margin-top: 40px;
+				border-bottom: 4px solid #007c3f;
+				background-color: #00a453;
+				cursor: pointer;
+				@include border-radius(4px);
+				@include animation(.2s);
+	    	}
+
+	    	#btn:hover{
+	    		background: #007c3f;
+	    	}
+    	}
+	}
+}
+
+
+
+/**
+	Game Information
+**/
+
+#gameinfo{
+	margin: 0 auto;
+
+	.sectioncontent{
+		width: 853px;
+
+		#video{
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		h1{
+			color: #41494a;
+			font-size: 18px;
+			font-weight: 300;
+			margin-top: 25px;
+			margin-bottom: 15px;
+		}
+
+		p{
+			color: #41494a;
+			font-size: 14px;
+			line-height: 24px;
+			opacity: 0.7;
+			text-align: justify;
+			margin-bottom: 25px;
+		}
+	}
+}
+
+
+/**
+	Footer
+**/
+
+footer{
+	height: 80px;
+	min-height: 80px;
+	width: 100%;
+	min-width: 1000px;
+	background: url('../images/footerbg.png') repeat;
+
+	.sectioncontent{
+		width: 1000px;
+		margin: 0 auto;
+		padding-top: 35px;
+	}
+
+	.col2{
+		float: left;
+		width: 50%;
+	}
+
+	.col2:last-child{
+		text-align: right;
+	}
+
+	h1{
+		font-size: 14px;
+		font-weight: 400;
+		color: #ffffff;
+	}
+
+	nav{
+		
+
+		li{
+			display: inline-block;
+    		text-transform: capitalize;
+    		font-weight: 400;
+    		font-size: 14px;
+    		margin-left: 30px;
+    		@include animation(.2s);
+
+    		a{
+    			opacity: 0.4;
+    			@include animation(.2s);
+    		}
+		}
+
+		li:hover{
+
+			a{
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+
